@@ -11,4 +11,6 @@ $_SESSION['request_token'] = $r[0];
 $_SESSION['request_token_secret'] = $r[1];
 header('Location: '.$r[2],true,303);
 
+if(!$r[2]) echo 'error... this user may have protected updates.'
+
 ?>
