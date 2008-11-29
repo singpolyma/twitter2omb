@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+ENV['GEM_PATH'] = '/home/singpolyma/.gems:/usr/lib/ruby/gems/1.8'
+
 users = []
 
 `ls tokens/`.split(/\n/).each do |token|

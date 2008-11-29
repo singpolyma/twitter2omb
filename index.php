@@ -1,12 +1,14 @@
 <?php
 
+require 'normalize_url.php';
+
 session_start();
 
 if(isset($_REQUEST['forget'])) unset($_SESSION['profile_url']);
 
 if($_REQUEST['profile_url'] && !strstr($_REQUEST['profile_url'], '.')) $_REQUEST['profile_url'] = 'http://identi.ca/'.$_REQUEST['profile_url'];
 
-if($_REQUEST['profile_url']) $_SESSION['profile_url'] = str_replace("'",'',$_REQUEST['profile_url']);
+if($_REQUEST['profile_url']) $_SESSION['profile_url'] = normalize_url(str_replace("'",'',$_REQUEST['profile_url']));
 
 if(!$_SESSION['profile_url']) { ?>
 
