@@ -2,6 +2,7 @@
 
 session_start();
 
+$_SESSION['profile_url'] = str_replace("'",'',$_REQUEST['profile_url']);
 $_SESSION['twitter_name'] = str_replace("'",'',$_REQUEST['twitter_name']);
 
 exec("./omb.rb '{$_SESSION['profile_url']}' '{$_SESSION['twitter_name']}'", $r);
