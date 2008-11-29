@@ -22,6 +22,8 @@ if(!$_SESSION['profile_url']) { ?>
 	exit;
 }
 
+echo '<!-- '.htmlentities($_SESSION['profile_url']).' -->';
+
 ?>
 
 <form method="get" action="/start.php"><div>
