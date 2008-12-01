@@ -17,14 +17,12 @@ def omb_post(endpoint, listenee, token, secret, id, text)
 		:http_method => :post
 	})
 
-
 	access_token = OAuth::AccessToken.new(@consumer, token, secret)
 	r = access_token.post(uri.path, {
 		:action => 'postnotice', #HACK
 		:omb_version => 'http://openmicroblogging.org/protocol/0.1',
 		:omb_listenee => listenee,
 		:omb_notice => 'http://tw2omb.singpolyma.net/notice.php?id=' + CGI::escape(id.to_s),
-#		:omb_notice_url => "http://twitter.com/#{listenee}/status/#{id}", # This doesn't work right
 		:omb_notice_content => text
 	})
 
