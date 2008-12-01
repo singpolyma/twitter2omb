@@ -23,5 +23,5 @@ end
 
 if statuses.length > 0
 	config[4] = statuses.shift['id']
-	#File.new(config_path, 'w').write(config.join("\n"))
+	File.new(config_path, 'w').write(config.join("\n"))
 end
