@@ -87,6 +87,10 @@ if(isset($_REQUEST['fail'])) echo '<p id="notice" class="fail">Failed to create 
 </div></form>
 
 <p>
+	Note: due to a <a href="http://laconi.ca/trac/ticket/850">limitation in OpenMicroBlogging and Laconi.ca</a>, avatars will not show up.
+</p>
+
+<p>
 	Note: this will not work for users who have their tweets protected.
 </p>
 
