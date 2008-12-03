@@ -47,6 +47,7 @@
 
 	<body>
 		<h1>Twitter to OpenMicroBlogging Bridge</h1>
+		<p>Sorry, all, @<a href="http://identi.ca/evan">evan</a> has blocked this service. You'll have to follow tweeple using <a href="http://twitter.com/">twitter.com</a>.</p>
 <?php
 
 require 'normalize_url.php';
