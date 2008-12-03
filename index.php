@@ -94,6 +94,10 @@ if(isset($_REQUEST['fail'])) echo '<p id="notice" class="fail">Failed to create 
 	Note: this will not work for users who have their tweets protected.
 </p>
 
+<p>
+	The <a href="http://github.com/singpolyma/twitter2omb">source code</a> is available under the <a rel="license" href="/COPYING">license</a>.
+</p>
+
 <a id="forget" href="/?forget">Change user</a>
 
 <?php
