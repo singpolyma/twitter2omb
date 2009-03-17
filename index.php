@@ -47,7 +47,7 @@
 
 	<body>
 		<h1>Twitter to OpenMicroBlogging Bridge</h1>
-		<p>Due to <a href="http://laconi.ca/trac/ticket/55">licensing issues</a>, tweeple must have licensed under CC-BY using tweetcc for this to work.</p>
+		<p>Due to <a href="http://laconi.ca/trac/ticket/55">licensing issues</a>, tweeple must have licensed under CC-BY using <a href="http://tweetcc.com">tweetcc</a> for this to work.</p>
 <?php
 
 require 'normalize_url.php';
