@@ -8,7 +8,7 @@ require  'oauth/consumer'
 require 'uri'
 require 'cgi'
 require 'twitter_profile'
-
+require 'tweetcc'
 
 def oauth_xrd(xrds)
 	oauth = xrds[nil]['http://oauth.net/discovery/1.0'][0][:uri][0]
@@ -66,7 +66,7 @@ else
 		"&omb_listenee=http%3A%2F%2Ftw2omb.singpolyma.net%2Fprofile.php%3Fuser%3D#{ARGV[1]}" +
 		"&omb_listenee_profile=http%3A%2F%2Ftwitter.com%2F#{ARGV[1]}" +
 		"&omb_listenee_nickname=#{ARGV[1].gsub(/[^0-9a-z]/i,'')}" +
-		"&omb_listenee_license=http%3A%2F%2Ftwitter.com%2Ftos" +
+		"&omb_listenee_license=#{CGI::escape(tweetcc(ARGV[1]))}" +
 		"&omb_listenee_fullname=#{CGI::escape(profile['name'])}" +
 		"&omb_listenee_homepage=#{CGI::escape(profile['url'])}" +
 		"&omb_listenee_bio=#{CGI::escape(profile['description'])}" +
