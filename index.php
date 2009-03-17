@@ -47,7 +47,7 @@
 
 	<body>
 		<h1>Twitter to OpenMicroBlogging Bridge</h1>
-		<p>Sorry, all, @<a href="http://identi.ca/evan">evan</a> has blocked this service, due to <a href="http://laconi.ca/trac/ticket/55">licensing issues</a>. You'll have to follow tweeple using <a href="http://twitter.com/">twitter.com</a>.</p>
+		<p>Due to <a href="http://laconi.ca/trac/ticket/55">licensing issues</a>, tweeple must have licensed under CC-BY using tweetcc for this to work.</p>
 <?php
 
 require 'normalize_url.php';
