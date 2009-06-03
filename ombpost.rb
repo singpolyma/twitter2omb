@@ -29,7 +29,10 @@ def omb_post(endpoint, listenee, token, secret, id, text, twitterusername=nil)
 	r = access_token.post(uri.path, data)
 
 	if r.code != '200'
+		return false if r.code == '403'
 		warn r.body
 	end
+
+	return true
 
 end
