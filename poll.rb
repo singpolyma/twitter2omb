@@ -26,7 +26,7 @@ end
 
 	statuses.reverse_each do |el|
 		config = users[el['from_user']]
-		omb_post(config[2], config[3], config[0], config[1], el['id'], CGI::unescapeHTML(el['text']))
+		omb_post(config[2], config[3], config[0], config[1], el['id'], CGI::unescapeHTML(el['text']), el['from_user'])
 	end
 
 	File.new('last_id', 'w').write(statuses.shift['id']) if statuses.length > 0
