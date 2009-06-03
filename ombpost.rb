@@ -7,7 +7,7 @@ require  'oauth/consumer'
 require 'uri'
 require 'cgi'
 
-def omb_post(endpoint, listenee, token, secret, id, text, twitterusername=nil)
+def omb_post(endpoint, listenee, token, secret, id, text)
 
 	uri = URI::parse(endpoint)
 
@@ -18,15 +18,13 @@ def omb_post(endpoint, listenee, token, secret, id, text, twitterusername=nil)
 	})
 
 	access_token = OAuth::AccessToken.new(@consumer, token, secret)
-	data = {
+	r = access_token.post(uri.path, {
 		:action => 'postnotice', #HACK
 		:omb_version => 'http://openmicroblogging.org/protocol/0.1',
 		:omb_listenee => listenee,
 		:omb_notice => 'http://tw2omb.singpolyma.net/notice.php?id=' + CGI::escape(id.to_s),
 		:omb_notice_content => text
-	}
-	data[:omb_notice_url] = "http://twitter.com/#{twitterusername}/status/#{id.to_s}" if twitterusername
-	r = access_token.post(uri.path, data)
+	})
 
 	if r.code != '200'
 		warn r.body

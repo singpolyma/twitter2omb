@@ -68,10 +68,10 @@ else
 		"&omb_listenee_nickname=#{ARGV[1].gsub(/[^0-9a-z]/i,'')}" +
 		"&omb_listenee_license=#{CGI::escape(tweetcc(ARGV[1]))}" +
 		"&omb_listenee_fullname=#{CGI::escape(profile['name'])}" +
-		"&omb_listenee_homepage=#{CGI::escape(profile['url'])}" +
 		"&omb_listenee_bio=#{CGI::escape(profile['description'])}" +
 		"&omb_listenee_location=#{CGI::escape(profile['location'])}" +
 		"&oauth_callback=http%3A%2F%2Ftw2omb.singpolyma.net%2Ffinish.php"
+	auth += "&omb_listenee_homepage=#{CGI::escape(profile['url'])}" if profile['url']
 	#	"&omb_listenee_avatar=#{CGI::escape(profile['profile_image_url'])}" image must be 96x96, twitter is smaller
 
 	a = @consumer.create_signed_request(:get, auth, request_token)

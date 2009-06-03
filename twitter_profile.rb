@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usrbin/ruby
 
 require 'open-uri'
 require 'json'
