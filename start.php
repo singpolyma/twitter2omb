@@ -5,7 +5,9 @@ session_start();
 $_SESSION['profile_url'] = str_replace("'",'',$_SESSION['profile_url']);
 $_SESSION['twitter_name'] = str_replace("'",'',$_REQUEST['twitter_name']);
 
-exec("./omb.rb '{$_SESSION['profile_url']}' '{$_SESSION['twitter_name']}'", $r);
+$profile = escapeshellarg($_SESSION['profile_url']);
+$twitter = escapeshellarg($_SESSION['twitter_name']);
+exec("./omb.rb $profile $twitter", $r);
 
 $_SESSION['request_token'] = $r[0];
 $_SESSION['request_token_secret'] = $r[1];
