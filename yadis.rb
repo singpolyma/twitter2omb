@@ -6,6 +6,7 @@ def xrds_for(url)
 	require 'uri'
 
 	uri = URI::parse(url)
+	raise 'There is no host in that URI!' unless uri.host
 
 	Net::HTTP.start(uri.host, uri.port) { |http|
 		response = http.request( Net::HTTP::Get.new("#{uri.path}?#{uri.query}") )
