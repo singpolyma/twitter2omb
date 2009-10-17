@@ -39,7 +39,7 @@ authorize_uri = URI::parse(oauth['http://oauth.net/core/1.0/endpoint/authorize']
 @consumer = OAuth::Consumer.new( 'http://tw2omb.singpolyma.net/', '', {
 	:site => "http://#{uri.host}",
 	:scheme => :query_string,
-	:http_method => :get,
+	:http_method => :post,
 	:request_token_path => "#{request_token_uri.path}?#{request_token_uri.query}&omb_version=http://openmicroblogging.org/protocol/0.1&omb_listener=#{CGI::escape(oauth['http://oauth.net/core/1.0/endpoint/request'][0][:localid])}",
 	:access_token_path => "#{access_token_uri.path}?#{access_token_uri.query}",
 	:authorize_url => oauth['http://oauth.net/core/1.0/endpoint/authorize'][0][:uri][0]
